@@ -3,7 +3,7 @@ import requests
 import json
 
 # Backend API URL
-API_URL = "http://127.0.0.1:8000"
+API_URL = "http://backend:8000"
 
 # Load chat history from JSON file
 def load_chat_history():
@@ -27,8 +27,8 @@ if "chat_history" not in st.session_state:
 
 # Display chat history
 for chat in st.session_state.chat_history:
-    st.text_area(f"You ({chat['timestamp']})", value=chat["user"], height=50, disabled=True)
-    st.text_area(f"Bot ({chat['timestamp']})", value=chat["bot"], height=50, disabled=True)
+    st.text_area(f"You ({chat['timestamp']})", value=chat["user"], height=70, disabled=True)
+    st.text_area(f"Bot ({chat['timestamp']})", value=chat["bot"], height=70, disabled=True)
 
 # User input
 user_input = st.text_input("Type your message:")
